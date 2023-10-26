@@ -1,0 +1,32 @@
+
+
+ALGORITHM tri-inser
+
+VAR
+  i , j : INTEGER;
+  tmp: INTEGER;
+  tab : ARRAY_OF integer[50];
+
+BEGIN
+  
+  FOR i FROM 1 TO tab.lenght -1 STEP 1  DO
+ tmp:=tab[i];
+//  on memorise dans cle la valeur de tab[i] car cette case risque d'etre ecrasée//
+ j=i-1;
+//  La variable j contient initialement l'index juste a gauche de la clé 
+ WHILE (j>=0 and tab[j]>tmp) DO
+
+  
+tab[j+1]:=tab[j];
+// On decale la valeur d'une case à droite
+j:=j-1;
+// On passe a la case suivante à gauche
+ END_WHILE
+ tab[j+1]:=tmp
+//  On place la valeur-clé à la place voulue pour obtenir un sous-tableau trié
+ END_FOR
+ END
+  
+    
+    
+  
